@@ -120,9 +120,8 @@ class docker::service (
   }
 
   $_manage_service = $manage_service ? {
-    false   => undef,
     true    => Service[docker],
-    default => undef,
+    default => [],
   }
 
   if $::osfamily == 'RedHat' {
